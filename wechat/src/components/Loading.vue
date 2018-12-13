@@ -1,0 +1,33 @@
+<template>
+  <transition name="fade">
+    <div id="loading" v-if="isLoading">
+      <div class="box">
+        <img src="./loaders/circles.svg">
+      </div>
+    </div>
+  </transition>
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+export default {
+  name: 'loading',
+  computed: {
+    ...mapGetters(['isLoading'])
+  }
+}
+</script>
+
+<style lang="scss">
+@import "../scss/px2rem";
+@import "../scss/mixin";
+#loading{
+  @include over;
+  @include flex(center, center);
+  background-color: rgba(255, 255, 255, 0.5);
+  .box{
+    height: px2rem(120);
+    width: px2rem(120);
+  }
+}
+</style>

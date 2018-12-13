@@ -1,0 +1,19 @@
+@import '../scss/mixin';
+#home {
+  @include font(12, 2.1);
+  @include flexDir(column);
+  text-align: center;
+  .content{
+    @extend #home;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .input {
+    &-text{
+      height:40px;
+      margin-top:40px;
+      background-color: transparent;
+      border: 1px solid #ddd;
+    }
+  }
+}

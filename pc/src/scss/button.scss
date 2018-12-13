@@ -1,0 +1,32 @@
+@import "./color";
+@import "./mixin";
+
+.btn{
+	border-radius: 3px;
+	&_default {
+		@extend .btn;
+		border: 1px solid;
+		&-md {
+			@extend .btn_default;
+			@include th(40);
+		}
+	}
+	&_primary {
+		@extend .btn;
+		color: #fff;
+		background-color: $color-theme;
+		&-md {
+			@extend .btn_primary;
+			@include th(40);
+		}
+	}
+	&_danger {
+		@extend .btn;
+		color: #fff;
+		background-color: $color-danger;
+		&-md {
+			@extend .btn_danger;
+			@include th(40);
+		}
+	}
+}
